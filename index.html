@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Steven Li | Portfolio</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.15.349/pdf.min.js"></script>
+
 </head>
 <body class="bg-gray-100 font-sans leading-normal tracking-normal">
     <header class="bg-white shadow">
@@ -151,15 +153,47 @@
             </div>
         </section>
         <!-- Resume Section -->
-        <section id="resume" class="mb-12">
+        <section id="resume" class="mb-4">
             <h2 class="text-3xl font-semibold text-gray-800 mb-4">Resume</h2>
-            <div class="flex justify-center">
-                <embed src="Steven_Li_resume.pdf" width="800" height="1000" type="application/pdf">
+            <div id="pdf-container" class="flex justify-center">
+                <canvas id="pdf-canvas" class="bg-gray-200 shadow-lg"></canvas>
             </div>
-        <div class="text-center mt-4">
+            <div class="text-center mt-4">
                 <a href="Steven_Li_resume.pdf" download class="text-blue-500 hover:underline">Download Resume</a>
             </div>
         </section>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.15.349/pdf.min.js"></script>
+        <script>
+            const url = 'Steven_Li_resume.pdf'; // Path to the PDF file
+        
+            const canvas = document.getElementById('pdf-canvas');
+            const context = canvas.getContext('2d');
+        
+            // Fetch and render the PDF document
+            pdfjsLib.getDocument(url).promise.then(pdf => {
+                pdf.getPage(1).then(page => {
+                    const viewport = page.getViewport({ scale: 1.5 }); // Adjust scale for better readability
+                    canvas.width = viewport.width;
+                    canvas.height = viewport.height;
+        
+                    const renderContext = {
+                        canvasContext: context,
+                        viewport: viewport,
+                    };
+                    page.render(renderContext);
+                });
+            });
+        </script>
+        
+        <style>
+        
+            #pdf-canvas {
+                max-width: 100%;
+                height: auto;
+            }
+        </style>
+        
         <!-- Contact Section -->
         <section id="contact" class="mb-12">
             <h2 class="text-3xl font-semibold text-gray-800 mb-4">Contact</h2>
