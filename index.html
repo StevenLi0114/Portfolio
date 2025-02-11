@@ -14,6 +14,16 @@
             <div class="flex justify-between items-center">
                 <h1 class="text-2xl font-bold text-gray-800">Steven Li</h1>
                 <nav>
+                    <style>
+                        nav ul li a {
+                            transition: background-color 0.3s ease-in-out;
+                            padding: 8px 12px;
+                            border-radius: 5px;
+                        }
+                        nav ul li a:hover {
+                            background-color: #e5e7eb;
+                        }
+                    </style>
                     <ul class="flex space-x-4">
                         <li><a href="#about" class="text-gray-700 hover:text-blue-500">About</a></li>
                         <li><a href="#projects" class="text-gray-700 hover:text-blue-500">Projects</a></li>
@@ -51,18 +61,17 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <!-- Project 1 -->
                 <div class="bg-white shadow-md rounded-lg p-6">
+                    <img src="dungeon_crawler.png" alt="Dungeon Crawler Game" class="w-full h-auto max-h-80 object-contain rounded-md mb-4">
                     <h3 class="text-xl font-semibold text-gray-800">Project 1: Dungeon Crawler Game Application</h3>
                     <a href="https://github.com/StevenLi0114/DungeonCrawlerGameCS2340" class="text-blue-500 hover:underline">GitHub Repository</a>
-                    <p class="text-gray-600 mt-2">Developed a simple Dungeon Crawler game on Android Studio with 4 other teammates. We used Java and XML to develop the game using MVVM Object Oriented Design. 
-                                                    Did extensive Unit tests through Java as well.
-                                                    Collaborated with teammates through Jira and Github</p>
+                    <p class="text-gray-600 mt-2">Collaborated with a team of four to design and develop an engaging Dungeon Crawler game in Android Studio, utilizing Java and XML while adhering to the MVVM (Model-View-ViewModel) architectural pattern for modular and scalable development. Implemented comprehensive unit testing using JUnit to ensure stability and eliminate bugs. Effectively managed tasks and workflow using Jira and GitHub, fostering efficient collaboration and version control among team members.</p>
                 </div>
                 <!-- Project 2 -->
                 <div class="bg-white shadow-md rounded-lg p-6">
+                    <img src="city_heatmap.png" alt="City Heatmap Explorer" class="w-full h-auto max-h-80 object-contain rounded-md mb-4">
                     <h3 class="text-xl font-semibold text-gray-800">Project 2: City Heatmap Explorer</h3>
                     <a href="https://github.com/StevenLi0114/CItyHeatmapExplorer" class="text-blue-500 hover:underline">GitHub Repository</a>
-                    <p class="text-gray-600 mt-2">Developed Web Application during HackPrinceton Fall 2024 to help people who want to move to specific areas in the United States. 
-                        It displays the area and the surrounding areas and gives information such as price of rent, buying a home, and nearby amenities. We used React to develop the Frontend UI, Python and FlaskAPI for backend logic, and Natural Language Processing to display city summaries.</p>
+                    <p class="text-gray-600 mt-2">Built a web application at HackPrinceton Fall 2024 to assist potential movers in evaluating U.S. cities. The app visualizes regions and provides key insights, including rental prices, home values, and local amenities. Developed the frontend using React, backend with Flask API, and leveraged NLP with generative AI to generate city summaries and recommendations.</p>
                 </div>
             </div>
         </section>
